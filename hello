@@ -1,0 +1,3 @@
+#!/Users/UserName/.nvm/versions/node/v14.15.5/bin/node
+
+console.log("hello world");
