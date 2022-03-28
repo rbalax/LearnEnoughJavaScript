@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn Enough javaScript</title>
   <script>
-    alert("hello, world!");
-    console.log("greetings");
+    const daysOfTheWeek = ["sunday", "monday", "tuesday", "wednesday",
+      "thursday", "friday", "saturday"
+    ];
+    let now = new Date();
+    let dayName = daysOfTheWeek[now.getDay()]
+    alert(`hello, world! It's ${dayName}`);
   </script>
 </head>
 
 <body>
-  <h1>Hello, world!</h1>
-  <p>This page includes an alert written in JavaScript.</p>
-  <h2>Checking publishing</h2>
 
 </body>
 
