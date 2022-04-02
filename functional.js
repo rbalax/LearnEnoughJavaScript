@@ -1,67 +1,32 @@
-let states = ["Kansas", "Nebrasca", "North Dakota", "South Dakota"]
-
-// function imperativeUrls(elements) {
-//   let urls = [];
-//   elements.forEach(function(element) {
-//     urls.push(element.toLowerCase().split(/\s+/).join("-"));
-//   });
-//   return urls;
-// }
-// console.log(imperativeUrls(states));
-
-// function functionalUrls(elements) {
-//   return elements.map(element => element.toLowerCase().split(/\s+/).join("-"));
-// }
+let states = ["Kansas", "Nebraska", "North Dakota", "South Dakota"];
 
 
-// for (i = 0; i < functionalUrls(states).length; i++) {
-// console.log(`https://www.${functionalUrls(states)[i]}.com`)
-// }
+function urlify(string) {
+  return string.toLowerCase().split(/\s+/).join('-');
+}
 
-//singles imperative
-function imperativesSingles(elements) {
-  let singles = [];
-  elements.forEach(function(element) {
-    if (element.split(/\s+/).length === 1) {
-      singles.push(element);
-    }
+// using forEach loop
+function imperativesUrl(elements) {
+  let urls = [];
+  elements.forEach(element => {
+    urls.push(urlify(element))
   });
-  return singles;
+  return urls;
 }
+console.log(imperativesUrl(states));
 
-console.log(imperativesSingles(states));
+// using map
 
-// singles: Functional version
-function functionalSingles(elements) {
-  return elements.filter(element => element.split(/\s+/).length === 1);
+function functionalUrl(elements) {
+  return elements.map(element => urlify(element));
 }
-console.log(functionalSingles(states));
+console.log(functionalUrl(states));
 
 
-let numbers = [1,2,3,4,5,6,7,8,9,10];
-//task sum
+// exercise
 
-function imperativeSum(elements) {
-  total = 0;
-  elements.forEach(function (n) {
-    total += n;
-  })
-  return total
-}
+function fullUrl(elements) {
+  return elements.map(element => `https://example.com/${urlify(element)}`)
+};
 
-// console.log(functionalSum(numbers));
-
-// function functionalSum(elements) {
-//   elements.reduce((total, n) => { return total += n; });
-// }
-
-// console.log(functionalSum(numbers));
-// lengths: Imperative solution
-function imperativeLengths(elements) {
-  let lengths = {};
-  elements.forEach(function(element) {
-    lengths[element] = element.length;
-  });
-  return lengths;
-}
-console.log(imperativeLengths(states));
+console.log(fullUrl(states));
